@@ -1,0 +1,536 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+* {
+	box-sizing:border-box;
+}
+
+html {
+	font-size:16px;
+}
+
+@include font-face("Carol Gothic", font-files("../font/CarolGothic.ttf", "../font/CarolGothic.otf"));
+@include font-face("Big Noodle Oblique", font-files("../font/big_noodle_titling_oblique.ttf"));
+@include font-face("Steelfish", font-files('../font/steelfishrg.ttf'));
+@include font-face("Ayres", font-files('../font/Ayres.ttf'));
+
+
+body {
+	font-family: Georgia, serif;
+	background: #959595 image-url('bg2.jpg') no-repeat top center fixed;
+	background-size:100% 100%;
+	color: #000;
+	font-weight: 400;
+	font-size: 0.9rem;
+	line-height:1.15rem;
+}
+
+body.page-article {
+	/*background: #959595 image-url('bg2.jpg') no-repeat top center fixed / 100% 100%;*/
+}
+
+/* Header */
+
+header#header {
+	text-align:center;
+	padding:20px 0;
+
+	h1 {
+		font-family:"Carol Gothic", serif;
+		font-size:5rem;
+		padding:30px 0 45px;
+		transition: color 0.5s;
+		position:relative;
+
+		a {
+			text-decoration:none;
+			color:black;
+		}
+
+		span {
+			color:#756C6C;
+			transition: color 0.5s;
+		}
+
+		em {
+			font-size: 2.5rem;
+			font-weight: 400;
+			position: absolute;
+			right: calc(50% - 420px);
+			color: black;
+			top: 43px;
+			opacity: 0;
+			-webkit-transform: translate3d(-10px,-10px,0);
+			transform: translate3d(-10px,-10px,0);
+			-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+			transition: transform 0.5s, opacity 0.5s;
+		}
+
+		i {
+			@include opacity(1);
+			transition: all 0.5s;
+		}
+
+		&:hover {
+			color:#756C6C;
+		}
+
+		&:hover span {
+			color:black;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			height: 15px;
+			width: 140px;
+			top: 60%;
+			margin-top: -18px;
+			left: 0;
+			z-index: -1;
+			background: #000;
+			margin-left:calc(50% - 90px);
+			-webkit-transform: rotate3d(0,0,1,180deg) scale3d(0,1,1);
+			transform: rotate3d(0,0,1,180deg) scale3d(0,1,1);
+			-webkit-transition: -webkit-transform 0.5s;
+			transition: transform 0.5s;
+		}
+
+		&:hover::before {
+			-webkit-transform: rotate3d(0,0,1,70deg) scale3d(1,1,1);
+			transform: rotate3d(0,0,1,70deg) scale3d(1,1,1);
+		}
+
+		&:hover em {
+			/*opacity: 1;*/
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+		}
+
+		&:hover i {
+			@include opacity(0);
+		}		
+	}
+
+	#social {
+		position:absolute;
+		top:10px;
+		right:20px;
+
+		li {
+			display:inline-block;
+			margin:0 0 0 5px;
+
+			img {
+				display:block;
+			}
+		}
+	}
+
+	#search-bt {
+		display:block;
+		height:30px;
+		color:#666;
+		position:absolute;
+		top:14px;
+		left:20px;
+		border:0;
+		font-family:Georgia, serif;
+		padding:0 10px 0 30px;
+		background:image-url('loupe.png') no-repeat 5px center;
+		background-size: 20px 20px;
+		cursor:pointer;
+		font-style:italic;
+		font-size:0.9rem;
+		@include border-radius(5px);
+	}
+}
+
+#page {
+	padding:0 20px;
+	max-width:1600px;
+	margin:0 auto;
+	background: rgba(255,255,255,0.9);
+
+	#top-infos {
+		/*border-top:1px solid #999;*/
+		border-bottom:1px solid #999;
+		padding:8px 0;
+		text-align:center;
+		text-transform: uppercase;
+	}
+}
+
+.articles-wrapper {
+	@include display-flex;
+  	@include flex-direction(row);
+  	@include flex-wrap(wrap);
+
+  	article {
+  		@include flex-grow(1);
+ 		@include flex-shrink(1);
+ 		@include flex-basis(0);
+ 		margin:20px 0;
+
+ 		&.article2 {
+ 			@include flex-grow(2);
+ 			@include flex-shrink(2);
+ 		}
+
+ 		&#edito {
+ 			padding:20px;
+			background: rgba(100,100,100,0.1); 
+
+ 			em {
+ 				float:right;
+ 				margin-top:10px;
+ 				font-style:italic;
+ 			}
+
+ 			h1 {
+ 				padding-right:50px;
+ 				background:image-url('megaphone.png') no-repeat right center;
+				background-size: 35px 35px;
+ 			}
+ 		}
+
+ 		&.figure {
+ 			img {
+ 				border:1px solid #ccc;
+ 			}
+
+  		    figcaption {
+  		    	margin-top:10px;
+  				background:#ddd;
+  				padding:20px;
+  				text-align:center;
+				background: radial-gradient(circle at top left,transparent 15px, #ddd 0) top left, 
+				radial-gradient(circle at top right,transparent 15px, #ddd 0) top right,
+			 	radial-gradient(circle at bottom right, transparent 15px, #ddd 0) bottom right,
+			  	radial-gradient(circle at bottom left, transparent 15px, #ddd 0) bottom left; 
+			  	background-size: 55% 55%; 
+			  	background-repeat: no-repeat;
+
+
+  				strong {
+  					font-style:italic;
+  				}
+
+  				p {
+  					margin-top:10px;
+  					font-style:italic;
+  				}
+  			}
+ 		}
+
+ 		header {
+ 			display:block;
+ 			margin:0 0 15px;
+
+ 			h1 {
+ 				font-size:1.6rem;
+ 				line-height:2rem;
+ 				margin:0 0 5px;
+
+ 				&.titleFont1 {
+ 					font-family:"Big Noodle Oblique", serif;
+ 					text-transform:uppercase;
+ 					font-size:2.5rem;
+ 					line-height:2.4rem;
+ 				}
+
+ 				&.titleFont2 {
+ 					font-family:"Steelfish", serif;
+ 					font-size:2.5rem;
+ 					line-height:2.4rem;
+ 				}
+
+ 				&.titleFont3 {
+ 					font-size:1.7rem;
+ 					font-style:italic;
+ 					line-height:1.8rem;
+ 				}
+
+ 				&.titleFont4 {
+ 					font-family:"Ayres", serif;
+ 					font-size:3.2rem;
+ 					text-transform:uppercase;
+ 					line-height:2.6rem;
+ 				}
+
+ 				&.titleFont5 {
+ 					font-family:"Ayres", serif;
+ 					font-size:3.2rem;
+ 					line-height:2.6rem;
+ 				}
+
+ 				a {
+ 					color:black;
+ 					text-decoration:none;
+ 				}
+ 			}
+
+ 			em {
+ 				font-style:italic;
+ 			}
+
+ 			p {
+ 				line-height:2rem;
+
+ 				&.estim {
+	 				float:right;
+	 				padding-left:30px;
+	 				background:image-url('clock-time.png') no-repeat 5px center;
+					background-size: 20px 20px;
+				}
+ 			}
+ 		}
+
+ 		.inner {
+ 			column-width:200px;
+ 			-moz-column-width:200px;
+ 			text-align:justify;
+ 			column-gap: 20px;
+ 			-moz-column-gap: 20px;
+  			
+  			p {
+  				margin-bottom:5px;
+  			}
+ 		
+ 			> blockquote {
+			  	column-span: all;
+			  	-moz-column-span: all;
+			  	font-size: 1.3em;
+			  	margin-top: 20px;
+			  	margin-bottom: 20px;
+			  	background:image-url('guillemets.png') no-repeat top left / 30px 30px;
+			  	position:relative;
+			  	color:#666;
+			  	font-style:italic;
+			  	padding:10px 50px;
+			  	line-height:1.65rem;
+
+			  	&::after {
+					content: '';
+					position: absolute;
+					height: 30px;
+					width: 30px;
+					bottom:0;
+					right:0;
+					z-index: 4;
+					background:image-url('guillemets-end.png') no-repeat top left / 30px 30px;
+				}
+			}
+
+ 		}
+
+ 		img {
+ 			width:100%;
+ 			margin:0 0 10px;
+
+ 			&.large {
+ 				column-span: all;
+ 				-moz-column-span: all;
+ 				width:auto;
+ 				display:block;
+ 			}
+ 		}
+
+ 		+ article { 
+		  border-left: 1px solid #2f2f2f;
+		  margin-left:20px;
+		  padding-left:20px;
+
+		  &.figure {
+		  	border:0;
+		  	padding-left:0;
+		  }
+		}
+  	}
+}
+
+footer#footer {
+	padding:30px 0;
+
+	ul {
+		text-align:center;
+
+		li {
+			display:inline-block;
+			margin:0 20px;
+
+			a {
+				color:#fff;
+				font-size:0.9rem;
+				text-decoration:none;
+
+				&:hover {
+					text-decoration:underline;
+				}
+			}
+		}
+	}
+}
+
+.page-article {
+	#header h1 {
+		font-size:3rem;
+		padding:5px 0 15px;
+	}
+	#page {
+		padding:0;
+		background:none;
+		position:relative;
+		width:100%;
+		max-width:100%;
+	}
+	#top-infos {
+		width:350px;
+		background:rgba(255,255,255,0.85);
+		height:35px;
+		position:absolute;
+		top:0;
+		left:30px;
+		z-index:10;
+
+		a {
+			text-transform:none;
+			color:black;
+			text-decoration:none;
+		}
+	}
+
+	article#article-full {
+		#article-header {
+			height:500px;
+			width:100%;
+			background:image-url('_TEMP/art.jpg') repeat center center fixed;
+			background-size:100% 100%;
+			position:relative;
+
+			.inner {
+				position:absolute;
+				bottom:0;
+				left:10%;
+				width:70%;
+				height:50%;
+				background:rgba(255,255,255,0.8);
+
+				h1 {
+				    font-size: 3rem;
+				    line-height: 3.5rem;
+				    padding: 40px;
+				}
+
+				em {
+					float:right;
+					font-size:1.1rem;
+					font-style:italic;
+					margin:0 40px 0 0;
+				}
+
+				i {
+					font-style: italic;
+				    font-size: 1.2rem;
+				    padding: 20px 40px 0;
+				    position:relative;
+
+				    &:after {
+				    	content:"";
+				    	display:block;
+				    	position:absolute;
+				    	top:0;
+				    	left:40px;
+				    	width:70%;
+				    	height:2px;
+				    	background:black;
+				    }
+				}
+			}
+		}
+
+		#article-content {
+ 			background:white;
+  			
+  			p {
+  				margin-bottom:5px;
+  			}
+
+  			h2 {
+  				font-weight:bold;
+  				margin:10px 0;
+  				font-size:1.1rem;
+  			}
+		}
+	}
+}
+
+#article-content {
+	.section {
+		@include display-flex;
+	  	@include flex-direction(row);
+	  	@include flex-wrap(wrap);
+	  	width:100%;
+	  	max-width:1600px;
+	  	margin:0 auto;
+
+	  	.bloc {
+	  		@include flex-grow(1);
+	 		@include flex-shrink(1);
+	 		@include flex-basis(0);
+	 		margin:20px 0;
+
+	 		&.bloc2 {
+	 			@include flex-grow(2);
+	 			@include flex-shrink(2);
+	 		}
+
+	 		.text-inner {
+				column-width:250px;
+				-moz-column-width:250px;
+	 			text-align:justify;
+	 			column-gap: 20px;
+	 			-moz-column-gap:20px;
+	 			padding:0 20px;
+	 		}
+
+	 		blockquote {
+			  	font-size: 1.3em;
+			  	margin:20px;
+			  	background:image-url('guillemets.png') no-repeat top left / 30px 30px;
+			  	position:relative;
+			  	color:#666;
+			  	font-style:italic;
+			  	padding:10px 50px;
+			  	line-height:1.65rem;
+			  	width:calc(100% - 40px);
+			  	text-align:center;
+
+			  	&::after {
+					content: '';
+					position: absolute;
+					height: 30px;
+					width: 30px;
+					bottom:0;
+					right:0;
+					z-index: 4;
+					background:image-url('guillemets-end.png') no-repeat top left / 30px 30px;
+				}
+			}
+	 	}
+
+	 	.pic {
+	 		text-align:center;
+
+	 		img {
+	 			display:inline;
+	 			width:calc(100% - 40px);
+	 		}
+	 	}
+	}
+}

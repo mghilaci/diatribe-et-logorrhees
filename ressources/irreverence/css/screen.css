@@ -1,0 +1,441 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 9, ../sass/screen.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 13, ../sass/screen.scss */
+html {
+  font-size: 15px;
+}
+
+/* line 17, ../sass/screen.scss */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+/* line 25, ../sass/screen.scss */
+a {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+/* line 30, ../sass/screen.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 35, ../sass/screen.scss */
+#page {
+  width: 100%;
+  height: 100%;
+  min-height: 680px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* line 45, ../sass/screen.scss */
+header {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+/* line 52, ../sass/screen.scss */
+header #logo {
+  margin: 0 30px 0 0px;
+  display: block;
+  float: left;
+  position: relative;
+  top: -35px;
+}
+/* line 61, ../sass/screen.scss */
+header ul li {
+  display: inline;
+  text-transform: uppercase;
+  line-height: 1.25rem;
+  margin: 0 40px 0 0;
+  font-size: 1.05rem;
+}
+/* line 68, ../sass/screen.scss */
+header ul li a:hover {
+  color: #b01817;
+  text-decoration: none;
+}
+/* line 73, ../sass/screen.scss */
+header ul li.active a {
+  color: #b01817;
+}
+
+/* line 80, ../sass/screen.scss */
+#backgrounds {
+  width: 110%;
+  margin: 0 -55%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+/* line 89, ../sass/screen.scss */
+#backgrounds img {
+  display: block;
+  width: 100%;
+}
+/* line 94, ../sass/screen.scss */
+#backgrounds div {
+  width: 100%;
+  height: 1500px;
+  position: relative;
+}
+/* line 99, ../sass/screen.scss */
+#backgrounds div#bg3 {
+  background: url('../img/temp/flyer1.jpg?1427407441');
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 106, ../sass/screen.scss */
+#news {
+  z-index: 3;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  padding-top: 100px;
+}
+/* line 114, ../sass/screen.scss */
+#news h2 {
+  margin: 10% 0 10px 22.5%;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.3rem;
+}
+
+/* line 124, ../sass/screen.scss */
+.slick-track {
+  left: -11% !important;
+}
+
+/* line 128, ../sass/screen.scss */
+#carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 12% 0 0 0;
+  z-index: 50;
+}
+/* line 137, ../sass/screen.scss */
+#carousel article {
+  width: 90%;
+}
+/* line 140, ../sass/screen.scss */
+#carousel article h1 {
+  border: 2px solid transparent;
+  padding: 28px 25px 15px 15px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  float: left;
+  clear: both;
+}
+@media screen and (max-width: 1300px) {
+  /* line 150, ../sass/screen.scss */
+  #carousel article h1 {
+    font-size: 2.6rem;
+  }
+}
+@media screen and (max-width: 1150px) {
+  /* line 156, ../sass/screen.scss */
+  #carousel article h1 {
+    font-size: 2.4rem;
+  }
+}
+/* line 161, ../sass/screen.scss */
+#carousel article span.date {
+  display: block;
+  font-style: italic;
+  font-size: 0.9rem;
+  padding: 15px 0;
+  position: relative;
+  margin: 0 0 20px;
+  clear: both;
+}
+/* line 170, ../sass/screen.scss */
+#carousel article span.date:after {
+  content: " ";
+  display: block;
+  height: 4px;
+  width: 35px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  background: white;
+}
+/* line 182, ../sass/screen.scss */
+#carousel article p {
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+  margin: 0 0 15px;
+  padding-right: 10%;
+  text-align: justify;
+}
+/* line 189, ../sass/screen.scss */
+#carousel article p a {
+  color: #b01817;
+}
+/* line 194, ../sass/screen.scss */
+#carousel article a.more {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.3rem;
+  color: #b01817;
+}
+/* line 209, ../sass/screen.scss */
+#carousel .slick-dots {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+/* line 216, ../sass/screen.scss */
+#carousel .slick-dots li {
+  display: inline-block;
+}
+/* line 219, ../sass/screen.scss */
+#carousel .slick-dots li button {
+  display: inline-block;
+  margin: 0 5px;
+  border: 1px solid white;
+  height: 14px;
+  width: 14px;
+  text-indent: -9999rem;
+  background: none;
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
+}
+/* line 232, ../sass/screen.scss */
+#carousel .slick-dots li.slick-active button {
+  width: 28px;
+  background: white;
+}
+/* line 239, ../sass/screen.scss */
+#carousel .slick-prev {
+  position: absolute;
+  top: calc(90% - 45px);
+  left: calc(50% - 40px);
+  height: 30px;
+  width: 30px;
+  outline: 0;
+  text-indent: -9999rem;
+  border: 1px solid white;
+  display: inline-block;
+  cursor: pointer;
+  background: url('../img/prev.png?1426258427') no-repeat center center;
+}
+/* line 253, ../sass/screen.scss */
+#carousel .slick-next {
+  position: absolute;
+  outline: 0;
+  top: calc(90% - 45px);
+  right: calc(50% - 40px);
+  border: 1px solid white;
+  height: 30px;
+  width: 30px;
+  text-indent: -9999rem;
+  display: inline-block;
+  cursor: pointer;
+  background: url('../img/next.png?1426258447') no-repeat center center;
+}
+
+/* line 268, ../sass/screen.scss */
+.popup-hide {
+  display: none;
+}
+
+/* line 272, ../sass/screen.scss */
+.mfp-ready .popup-hide {
+  display: block;
+}
+
+/* line 276, ../sass/screen.scss */
+.popup-content {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 800px;
+  margin: 20px auto;
+  color: black;
+  z-index: 1000;
+}
+/* line 286, ../sass/screen.scss */
+.popup-content h1 {
+  font-size: 2rem;
+  margin: 10px 0 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* line 292, ../sass/screen.scss */
+.popup-content h1 span {
+  text-transform: none;
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 5px 0 0 0;
+}
+/* line 300, ../sass/screen.scss */
+.popup-content .deco {
+  text-align: center;
+  display: block;
+  font-size: 1.2rem;
+  margin: 0 0 20px;
+}
+/* line 307, ../sass/screen.scss */
+.popup-content p {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  margin-bottom: 20px;
+  text-align: justify;
+  padding: 0 20px;
+}
+/* line 314, ../sass/screen.scss */
+.popup-content p a {
+  color: #b01817;
+}
+
+/* line 320, ../sass/screen.scss */
+#center1 {
+  border: 0;
+  position: absolute;
+  text-indent: -9999rem;
+  width: 158px;
+  height: 106px;
+  background: url('../img/bt_ba.png?1428057325') no-repeat center center;
+  top: 62%;
+  margin: 0 -79px;
+  left: 36%;
+  z-index: 500;
+  cursor: pointer;
+  outline: 0;
+  display: block;
+  -webkit-transition: all ease O;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition: all ease O 0.5s;
+  -o-transition: all ease O 0.5s;
+  transition: all ease O 0.5s;
+}
+
+/* line 337, ../sass/screen.scss */
+#center2 {
+  border: 0;
+  position: absolute;
+  text-indent: -9999rem;
+  width: 86px;
+  height: 106px;
+  background: url('../img/bt_video.png?1426836576') no-repeat center center;
+  top: 62%;
+  margin: 0 -43px;
+  left: 36%;
+  z-index: 500;
+  cursor: pointer;
+  outline: 0;
+  display: none;
+  -webkit-transition: all ease O;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition: all ease O 0.5s;
+  -o-transition: all ease O 0.5s;
+  transition: all ease O 0.5s;
+}
+
+/* line 354, ../sass/screen.scss */
+#rectangle {
+  height: 89px;
+  max-width: 460px;
+  position: absolute;
+  border: 2px solid white;
+  top: 0;
+  left: 0;
+  margin: 12% 0 0px 22.5%;
+  width: 28%;
+}
